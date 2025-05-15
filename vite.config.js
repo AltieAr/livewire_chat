@@ -13,6 +13,13 @@ export default defineConfig({
             ],
         },
     },
+      output: {
+            // tambahkan manual output folder jika perlu
+            // untuk menghindari .vite/
+            assetFileNames: 'assets/[name]-[hash][extname]',
+            entryFileNames: 'assets/[name]-[hash].js',
+        }
+    ,
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
