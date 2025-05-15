@@ -17,17 +17,6 @@ Route::middleware('redirectlogin')->group(function () {
 
 });
 
-//kalau dia blm login mencoba akses route di dalam akan di redirect ke  return redirect('/');
-// Route::middleware('Guestcust')->group(function(){
-//         Route::get('/dashboard', Index::class)->name('dashboard');
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-//     Route::get('/chat', Index::class)->name('chat.index');
-//     Route::post('/chat/{query}', Chat::class)->name('chat.chat');
-//     Route::get('/chat/{query}', Chat::class)->name('chat.chat');
-//     Route::get('/users', Users::class)->name('users');
-// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Index::class)->name('dashboard');
@@ -35,7 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/chat', Index::class)->name('chat.index');
-    Route::post('/chat/{query}', Chat::class)->name('chat.chat');
+    Route::post('/chat/{query}', Chat::class)->name('chat.chat.post');
     Route::get('/chat/{query}', Chat::class)->name('chat.chat');
     Route::get('/users', Users::class)->name('users');
     Route::post('/broadcasting/auth', function (Illuminate\Http\Request $request) {
@@ -43,28 +32,7 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-// use App\Events\TestPusherEvent;
 
-// Route::get('/test-broadcast', function () {
-//     broadcast(new TestPusherEvent());
-//     return 'Broadcast sent!';
-// });
-
-
-
-// Route::get('/home',function(){
-//         return view('');
-// });
-
-
-// Route::get('/signin',function(){
-//         return view('auth.login');
-// });
-
-// Route::get('/chat',[Index::class,'chat.index']);
-
-// ->middleware(['auth','verified']);
-// use Illuminate\Support\Facades\Route;
 
 
 
